@@ -1,16 +1,31 @@
-# React + Vite
+# On Track
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  A full-stack workout tracking web app built with React, Vite,                 
+  Tailwind CSS, shadcn/ui, Express and SQLite.
+                                                                                
+  ## Features     
+  - Create workout plans (A, B, C) with exercise checklists
+  - Log sets with weight, reps and set duration timer                           
+  - Auto rest timer (1 min upper body / 2 min lower body)
+  - See last performance when selecting an exercise                             
+  - Track weekly volume per muscle group with science-based targets             
+  - Progress charts per exercise over time                                      
+  - Session notes and feeling tags                                              
+  - Separate tracking for rehab exercises                                       
+  - Export data to CSV                                                          
+  - Mobile-first design, installable as PWA
+                                                                                
+  ## Tech Stack   
+  - **Frontend:** React, Vite, Tailwind CSS, shadcn/ui, Recharts                
+  - **Backend:** Node.js, Express
+  - **Database:** SQLite (better-sqlite3)                                       
+  
+  ## Getting Started                                                            
+  # Install dependencies
+  npm install
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  # Start backend
+  npm run server
+                                                                                
+  # Start frontend
+  npm run dev          
