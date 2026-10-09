@@ -27,6 +27,31 @@ Ask: "Can you explain this back to me in simple words, as if explaining to a pee
 **6. Track avoidance patterns.**
 If the user consistently skips certain topics across the conversation, point it out explicitly.
 
+## Current Progress
+
+### Where we stopped (2026-04-24)
+- Routing works: `/`, `/plans`, `/progress` with React Router
+- Navigation bar built with `NavLink`, gold active state, bottom fixed
+- Today screen has conditional rendering working:
+  - `currentPlan === null` → shows "Ready to train?" + plan button
+  - `currentPlan !== null` → shows active workout screen
+
+### State structure in Today.jsx
+- `plans` → list of available plans (will be fetched from backend)
+- `currentPlan` → active workout object `{ name: 'Plan A' }`, null when no workout
+
+### Next steps
+1. Fetch real plans from backend API using `useEffect`
+2. Build plan picker UI (show Plan A/B/C buttons from real data)
+3. Build workout screen (checklist, set logger, timers)
+
+### Concepts covered
+- JSX, components, props, conditional rendering
+- `useState` — stores values that cause re-renders when updated
+- `useEffect` — not covered yet, needed next for fetching plans
+- React Router: `BrowserRouter`, `Routes`, `Route`, `NavLink`
+- Tailwind utility classes, CSS custom properties
+
 ## User Context
 
 - Studying Generative AI at kood/ (peer-to-peer, no teachers)
