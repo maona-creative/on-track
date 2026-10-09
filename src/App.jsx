@@ -1,8 +1,8 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom'
-import Today from './components/Today'
-import Plans from './components/Plans'
-import Progress from './components/Progress'
+import Today from './pages/Today'
+import Plans from './pages/Plans'
+import Progress from './pages/Progress'
 import Navigation from './components/Navigation'
 
 function App() {
