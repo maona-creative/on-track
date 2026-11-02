@@ -60,7 +60,8 @@
 
 | Status | Task | Milestone | Priority |
 |--------|------|-----------|----------|
-| Backlog | Create exercises table (name, muscle_group, optimal_sets, optimal_reps, rest_seconds, is_compound) | M4 | 🔴 |
+| Backlog | Create exercises table (name, description, common_mistakes, optimal_sets, optimal_reps, rest_seconds, is_compound) | M4 | 🔴 |
+| Backlog | Create exercise_muscles join table (exercise_id, muscle, factor: 1 = primary, 0.5 = secondary) | M4 | 🔴 |
 | Backlog | Seed 30+ default exercises with science-based rest times and rep ranges | M4 | 🔴 |
 | Backlog | GET /api/exercises with optional muscle_group filter | M4 | 🔴 |
 | Backlog | POST /api/exercises — add custom exercise (user-owned) | M4 | 🟡 |

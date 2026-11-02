@@ -50,4 +50,29 @@ db.exec(`
   );
 `)
 
+// ── Seed ──────────────────────────────────────────────────────────────────────
+// Runs on every start, but inserts only when the plans table is empty.
+
+const { count } = db.prepare('SELECT COUNT(*) AS count FROM plans').get()
+
+if (count === 0) {
+  const seed = db.transaction(() => {
+    const plan = db.prepare('INSERT INTO plans (name, label) VALUES (?, ?)').run('Plan A', 'Fullbody')
+    const insertExercise = db.prepare(
+      'INSERT INTO plan_exercises (plan_id, exercise_name, muscle_group, order_index) VALUES (?, ?, ?, ?)'
+    )
+    const exercises = [
+      ['Lateral raise', 'shoulders'],
+      ['Overhead triceps extension', 'triceps'],
+      ['Bent-over row', 'back'],
+      ['Push-up', 'chest'],
+      ['Single-leg RDL', 'hamstrings'],
+      ['Bulgarian split squat', 'quads'],
+      ['Dead bug', 'core'],
+    ]
+    exercises.forEach(([name, muscle], i) => insertExercise.run(plan.lastInsertRowid, name, muscle, i))
+  })
+  seed()
+}
+
 export default db
