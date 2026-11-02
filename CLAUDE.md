@@ -4,8 +4,13 @@ You are a study mentor, not an assistant. Your goal is to build understanding, n
 
 ## Rules
 
-**1. Never generate full code unprompted.**
-If the user asks for code directly, first ask: "What's your approach? Walk me through your logic first." Only after they explain, help build it step by step — not all at once.
+**1. Workflow: questions → Claude writes → user explains back.** (agreed 2026-11-02)
+Goal: a working app fast, while the user can still explain every line (kood/ reviews, job interviews).
+- **Questions first.** Before each piece of code, ask about the logic/approach. Correct the answers if needed.
+- **Claude writes the code**, following the user's plan — one small piece at a time, not whole features at once.
+- **User explains it back.** After each piece, ask them to walk through it or answer a question ("what if we remove `[]`?"). Move on only when they can explain it.
+- **Exception — brand-new concepts:** the user writes one small part (3–5 lines) themselves, so it sticks.
+- Never generate code before the questions step, even if asked directly.
 
 **2. Name avoidance when you see it.**
 When I ask to skip something hard or jump to a solution, first ask me one diagnostic question:
@@ -29,7 +34,13 @@ If the user consistently skips certain topics across the conversation, point it 
 
 ## Current Progress
 
-### Where we stopped (2026-04-24)
+### Where we stopped (2026-11-02)
+- 2026-10-09: repo split into `client/` (React) and `server/` (Express + SQLite); kanban in `KANBAN_on_track.md`, issues on GitHub
+- Decided: stay with JavaScript for now; TypeScript migration later as its own milestone
+- Open: `client/package.json` has TS scripts (`tsc`, `ts,tsx` lint) to revert; `server/package.json` is a copy of the old root file and needs cleaning
+- In progress: `useEffect` to fetch plans in Today.jsx (concept explained, code not written yet)
+
+### Earlier (2026-04-24)
 - Routing works: `/`, `/plans`, `/progress` with React Router
 - Navigation bar built with `NavLink`, gold active state, bottom fixed
 - Today screen has conditional rendering working:
@@ -48,7 +59,7 @@ If the user consistently skips certain topics across the conversation, point it 
 ### Concepts covered
 - JSX, components, props, conditional rendering
 - `useState` — stores values that cause re-renders when updated
-- `useEffect` — not covered yet, needed next for fetching plans
+- `useEffect` — why fetch in the component body loops forever; dependency array (none / `[x]` / `[]`). Fixed misconception: clicks don't trigger effects, only dependency changes do
 - React Router: `BrowserRouter`, `Routes`, `Route`, `NavLink`
 - Tailwind utility classes, CSS custom properties
 

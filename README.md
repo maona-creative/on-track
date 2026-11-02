@@ -21,11 +21,8 @@
   - **Database:** SQLite (better-sqlite3)                                       
   
   ## Getting Started                                                            
-  # Install dependencies
-  npm install
+  # Start backend (http://localhost:3001)
+  cd server && npm install && npm run dev
 
-  # Start backend
-  npm run server
-                                                                                
-  # Start frontend
-  npm run dev          
+  # Start frontend (http://localhost:5173), in a second terminal
+  cd client && npm install && npm run dev          
