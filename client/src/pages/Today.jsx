@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getPlans } from '../services/api';
 
 function Today() {
   
    const [plans, setPlans] = useState([]);
    const [currentPlan, setCurrentPlan] = useState(null);
+   
+   useEffect(() => {
+     getPlans().then(setPlans);
+   }, []);
 
    if (!currentPlan) {
     return (
@@ -25,3 +30,4 @@ function Today() {
 }
 
 export default Today
+
