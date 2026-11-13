@@ -16,11 +16,20 @@ function Today() {
      <div>
         Ready to start your day! Check your plans and get on track.
      </div>
-     <button
-      type = "button"
-      onClick={() => setCurrentPlan({name: 'Plan A' })}
-     >Plan A
-   </button>
+     <div>
+     {plans.map(plan => (
+      <button 
+      key={plan.id}
+      onClick={() => setCurrentPlan(plan)}
+      type="button"
+      
+      >
+       {plan.name} - {plan.label}
+       
+      </button>
+     ))}
+     
+   </div>
    </>)
    } 
     return (<div>{`Today's plan: ${currentPlan.name}`}</div>);
